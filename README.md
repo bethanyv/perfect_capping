@@ -4,7 +4,7 @@ This base code is taken from example projects for CIS 322 at UO by Professor Ram
 
 ## To run:
 
-Ensure credentials.ini is in the brevets folder.
+Ensure credentials.ini is in the perfect_capping folder.
 
 * `cd perfect_capping/`
 * `./run.sh`
