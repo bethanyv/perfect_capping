@@ -1,7 +1,6 @@
 """
-Replacement for RUSA ACP brevet time calculator
-(see https://rusa.org/octime_acp.html)
-
+App for finding perfect honor 
+This base code is taken from example projects for CIS 322 at UO by Professor Ramakrishnan Durairajan 
 """
 
 import flask
@@ -47,29 +46,24 @@ def page_not_found(error):
 @app.route("/_calc_times")
 def _calc_times():
     """
-    Calculates open/close times from miles, using rules
-    described at https://rusa.org/octime_alg.html.
-    Expects one URL-encoded argument, the number of miles.
+    Calculates the honor from different amounts of people
     """
     app.logger.debug("Got a JSON request")
     honor = request.args.get('honor', 999, type=float)
 
     app.logger.debug("honor={}\n".format(honor))
     
-    # dictionary of persons and opportunities
+    # dictionary of persons and options
     options = perfect_cap_calc.calculate_honor(honor)
     one_person = options[1] # list of 1 person
     two_people = options[2]
     three_people = options[3]
     result = {"one_person": one_person, "two_people": two_people, "three_people": three_people}
-    # result = options
     return flask.jsonify(result=result)
 
 @app.route('/new', methods=['POST'])
 def new():
-
     honor = request.form.getlist('honor')
-
     return '', 204
 
 #############
