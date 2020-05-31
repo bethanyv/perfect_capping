@@ -2,11 +2,15 @@
  * Styles for Perfect Capping
  */
 
+/* Ringbearer Font
+Made by 'thehutt' on 'https://www.1001fonts.com/ringbearer-font.html'*/
 @font-face {
   font-family: fun-times;
   src: url(font-fam.ttf);
 }
 
+/* Quikhand Font
+Made by 'Qwerks' on 'https://www.1001fonts.com/quikhand-font.html'*/
 @font-face {
   font-family: handwriting;
   src: url(handwriting.ttf);
