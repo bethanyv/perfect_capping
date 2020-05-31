@@ -30,17 +30,15 @@
 <body>
 <!-- bootstrap requires a 'container' div around content -->
 <div class="container">
+  <img class="logo" src="static/images/logo.jpg" alt="WoW logo">
 
 <h1>Perfect Cap Calculation</h1>
   <p>Submit the honor points needed below to figure out which level and rank of a user to kill</p>
 
 <!-- Design on bootstrap grid -->
 
-  <br />  <!-- Cosmetic -- a little vertical space -->
-  <!-- Although we do not use tables for general page layout, they are
-       appropriate for something that really is a table, like this
-       one.  We allocate it the full 12 columns of the bootstrap grid.
-  -->
+  <br /> 
+
 <form action="/new" method="POST" id="target">
      <!-- (honor) -->
     <label for="honor">Honor Points Needed:</label><br>
@@ -52,7 +50,7 @@
 <table id="perfect_options"></table>
 
 <div class="footer">
-  <p>Made by Bethany for Auggy and Sem :)</p>
+  <p>Made by Bethany for Auggy and Sem :)<img src="static/images/flex.gif" alt="fun" class="fun"></p>
 </div>
 
 <script type="text/javascript">
@@ -125,8 +123,8 @@
             var cell2 = row.insertCell(k + 1);
             var blank = row.insertCell(k + 2);
             blank.className = "add";
-            cell1.innerHTML = "LEVEL";
-            cell2.innerHTML = "RANK";
+            cell1.innerHTML = "<b>LEVEL</b>";
+            cell2.innerHTML = "<b>RANK</b>";
             blank.innerHTML = " "
           }
         }

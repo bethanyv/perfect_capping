@@ -7,7 +7,11 @@
  */
 
 td {
+	padding-bottom: 2px;
+	padding-left: 10px;
 	padding-right: 15px;
+	padding-top: 2px;
+	border-bottom: 1px solid #ddd;
 }
 
 table tr:nth-child(even) {
@@ -24,4 +28,13 @@ table tr:nth-child(odd) {
 
 .footer p {
 	margin-top: 70px;
+}
+
+.logo {
+	margin: 30px;
+	max-width: 500px;
+}
+
+.fun {
+	max-width: 65px;
 }
