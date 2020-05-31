@@ -50,27 +50,19 @@
 
 <h2>Perfect matches:</h2>
 <table id="perfect_options"></table>
-<!-- <h2>TWO KILLS:</h2>
-<table id="two_people_options"></table>
-<h2>THREE KILLS:</h2>
-<table id="three_people_options"></table> -->
+
+<div class="footer">
+  <p>Made by Bethany for Auggy and Sem :)</p>
+</div>
 
 <script type="text/javascript">
 
   var SCRIPT_ROOT = {{ request.script_root|tojson|safe }} ;
   var TIME_CALC_URL = SCRIPT_ROOT + "/_calc_times";
 
-  // Pass calctimes a <td> element containing the data for a control.
-  // It extracts the distance and calls the server to get times to
-  // fill in open and close times in a human-readable format.
-  // (If we want to also keep the ISO-formatted times, we'll need to
-  // stash them in hidden fields.) 
   function calc_times(honor) {
-    // var honor = control.find("input[name='honor']").val();
     console.log(honor);
     var perfect_table = document.getElementById('perfect_options');
-    // var two_people_table = document.getElementById('two_people_options');
-    // var three_people_table = document.getElementById('three_people_options');
     
     $.getJSON(TIME_CALC_URL, { honor: honor }, 
       // response handler
