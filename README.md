@@ -1,16 +1,5 @@
-# Project 4: Brevet time calculator with Ajax
-## Author: Bethany Van Meter, bvanmet2@uoregon.edu
-
-Bascially the RUSA ACP controle time calculator with flask and ajax.
-
-Credits to Michal Young for the initial version of this code.
-
-## ACP controle times
-That's "controle" with an 'e', because it's French, although "control" is also accepted. Controls are points where a rider must obtain proof of passage, and control[e] times are the minimum and maximum times by which the rider must arrive at the location.
-
-The algorithm for calculating controle times is described here <https://rusa.org/pages/acp-brevet-control-times-calculator>. Additional background information is given here <https://rusa.org/pages/rulesForRiders>. 
-
-Essentially replacing the calculator here <https://rusa.org/octime_acp.html>.
+# Project: Perfect Capping App for WoW
+## Author: Bethany Van Meter, bethanyv21@gmail.com
 
 ## To run:
 
