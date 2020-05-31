@@ -76,6 +76,9 @@ def calculate_honor(honor_needed):
               # print(point_amt)
               if point_amt + point_amt_to_add + point_amt_to_add_2 == honor_needed:
                 if ((["Level " + str(LEVELS[k]),"Rank " + str(RANKS[row_to_add]), "Level " + str(LEVELS[i]),"Rank " + str(RANKS[row]), "Level " + str(LEVELS[j]),"Rank " + str(RANKS[row_to_add_2])] not in possibilities[3])\
+                  and ((["Level " + str(LEVELS[k]),"Rank " + str(RANKS[row_to_add]), "Level " + str(LEVELS[j]),"Rank " + str(RANKS[row_to_add_2]), "Level " + str(LEVELS[i]),"Rank " + str(RANKS[row])] not in possibilities[3])\
+                    and (["Level " + str(LEVELS[i]),"Rank " + str(RANKS[row]), "Level " + str(LEVELS[k]),"Rank " + str(RANKS[row_to_add]), "Level " + str(LEVELS[j]),"Rank " + str(RANKS[row_to_add_2])] not in possibilities[3])\
+                  and (["Level " + str(LEVELS[i]),"Rank " + str(RANKS[row]), "Level " + str(LEVELS[j]),"Rank " + str(RANKS[row_to_add_2]), "Level " + str(LEVELS[k]),"Rank " + str(RANKS[row_to_add])] not in possibilities[3]))\
                   and (["Level " + str(LEVELS[j]),"Rank " + str(RANKS[row_to_add_2]), "Level " + str(LEVELS[k]),"Rank " + str(RANKS[row_to_add]), "Level " + str(LEVELS[i]),"Rank " + str(RANKS[row])] not in possibilities[3])\
                   and (["Level " + str(LEVELS[j]),"Rank " + str(RANKS[row_to_add_2]), "Level " + str(LEVELS[i]),"Rank " + str(RANKS[row]), "Level " + str(LEVELS[k]),"Rank " + str(RANKS[row_to_add])] not in possibilities[3])):
                     possibilities[3].append(["Level " + str(LEVELS[i]),"Rank " + str(RANKS[row]), "Level " + str(LEVELS[k]),"Rank " + str(RANKS[row_to_add]), "Level " + str(LEVELS[j]),"Rank " + str(RANKS[row_to_add_2])])

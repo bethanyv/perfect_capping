@@ -74,5 +74,5 @@ if app.debug:
 
 
 if __name__ == "__main__":
-    print("Opening for global access on port {}".format(CONFIG.PORT))
-    app.run(port=CONFIG.PORT, host="0.0.0.0")
+    print("Opening for global access on port 5000")
+    app.run(port=5000, host="0.0.0.0")
