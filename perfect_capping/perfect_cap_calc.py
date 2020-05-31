@@ -26,7 +26,7 @@ def calculate_honor(honor_needed):
   '''
   honor needed should return dictionary of 1, 2, 3 people and a list of lists 
   of all possible people
-  ex: {1: [[1,4], [2,5]]}
+  ex: {1: [[1,4], [2,5]] 2: [] 3: []}
   '''
   TABLE = create_table('perfect_cap.csv')
   possibilities = {1: [], 2: [], 3: []}
@@ -37,11 +37,9 @@ def calculate_honor(honor_needed):
       point_amt = int(point_amt)
       # print(point_amt)
       if point_amt == honor_needed:
-        print("HERE")
         possibilities[1].append(["Level " + str(LEVELS[i]),"Rank " + str(RANKS[row])])
       row += 1
 
-  print(TABLE)
   # for 2 kills
   for i in range(13): # 13 rows
     row = 0
@@ -77,7 +75,7 @@ def calculate_honor(honor_needed):
               if point_amt + point_amt_to_add + point_amt_to_add_2 == honor_needed:
                 if ((["Level " + str(LEVELS[k]),"Rank " + str(RANKS[row_to_add]), "Level " + str(LEVELS[i]),"Rank " + str(RANKS[row]), "Level " + str(LEVELS[j]),"Rank " + str(RANKS[row_to_add_2])] not in possibilities[3])\
                   and ((["Level " + str(LEVELS[k]),"Rank " + str(RANKS[row_to_add]), "Level " + str(LEVELS[j]),"Rank " + str(RANKS[row_to_add_2]), "Level " + str(LEVELS[i]),"Rank " + str(RANKS[row])] not in possibilities[3])\
-                    and (["Level " + str(LEVELS[i]),"Rank " + str(RANKS[row]), "Level " + str(LEVELS[k]),"Rank " + str(RANKS[row_to_add]), "Level " + str(LEVELS[j]),"Rank " + str(RANKS[row_to_add_2])] not in possibilities[3])\
+                  and (["Level " + str(LEVELS[i]),"Rank " + str(RANKS[row]), "Level " + str(LEVELS[k]),"Rank " + str(RANKS[row_to_add]), "Level " + str(LEVELS[j]),"Rank " + str(RANKS[row_to_add_2])] not in possibilities[3])\
                   and (["Level " + str(LEVELS[i]),"Rank " + str(RANKS[row]), "Level " + str(LEVELS[j]),"Rank " + str(RANKS[row_to_add_2]), "Level " + str(LEVELS[k]),"Rank " + str(RANKS[row_to_add])] not in possibilities[3]))\
                   and (["Level " + str(LEVELS[j]),"Rank " + str(RANKS[row_to_add_2]), "Level " + str(LEVELS[k]),"Rank " + str(RANKS[row_to_add]), "Level " + str(LEVELS[i]),"Rank " + str(RANKS[row])] not in possibilities[3])\
                   and (["Level " + str(LEVELS[j]),"Rank " + str(RANKS[row_to_add_2]), "Level " + str(LEVELS[i]),"Rank " + str(RANKS[row]), "Level " + str(LEVELS[k]),"Rank " + str(RANKS[row_to_add])] not in possibilities[3])):
