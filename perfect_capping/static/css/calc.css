@@ -7,6 +7,11 @@
   src: url(font-fam.ttf);
 }
 
+@font-face {
+  font-family: handwriting;
+  src: url(handwriting.ttf);
+}
+
 td {
 	padding-bottom: 2px;
 	padding-left: 10px;
@@ -32,6 +37,8 @@ h1, h2 {
 }
 
 .footer p {
+	font-family: handwriting;
+	font-size: 18px;
 	margin-top: 70px;
     padding-top: 20px;
 }

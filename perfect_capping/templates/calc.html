@@ -139,11 +139,13 @@
           for(k = 0; k <= 6; k += 3) {
             var cell1 = row.insertCell(k);
             var cell2 = row.insertCell(k + 1);
-            var blank = row.insertCell(k + 2);
-            blank.className = "add";
             cell1.innerHTML = "<b>LEVEL</b>";
             cell2.innerHTML = "<b>RANK</b>";
-            blank.innerHTML = " "
+            if(k != 6) {
+              var blank = row.insertCell(k + 2);
+              blank.className = "add";
+              blank.innerHTML = " ";
+            }
           }
         }
         else {
