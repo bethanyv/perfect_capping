@@ -46,7 +46,7 @@
     <input type="submit" value="Submit">
 </form>
 
-<h2>Perfect matches:</h2>
+<h2>perfect matches:</h2>
 <table id="perfect_options"></table>
 
 <div class="footer">
@@ -100,20 +100,38 @@
           var blank = row.insertCell(2);
           var cell3 = row.insertCell(3);
           var cell4 = row.insertCell(4);
+          var blank2 = row.insertCell(5);
+          var cell5 = row.insertCell(6);
+          var cell6 = row.insertCell(7);
           cell1.innerHTML = honor_val['two_people'][i][0];
           cell2.innerHTML = honor_val['two_people'][i][1];
           blank.innerHTML = " + ";
           blank.className = "add";
           cell3.innerHTML = honor_val['two_people'][i][2];
           cell4.innerHTML = honor_val['two_people'][i][3];
+          cell5.innerHTML = " ";
+          cell6.innerHTML = " ";
+          blank2.innerHTML = " ";
         }
         // one kill
         for (i = 0; i < honor_val['one_person'].length; i++) {
           var row = perfect_table.insertRow(i);
           var cell1 = row.insertCell(0);
           var cell2 = row.insertCell(1);
+          var blank = row.insertCell(2);
+          var cell3 = row.insertCell(3);
+          var cell4 = row.insertCell(4);
+          var blank2 = row.insertCell(5);
+          var cell5 = row.insertCell(6);
+          var cell6 = row.insertCell(7);
           cell1.innerHTML = honor_val['one_person'][i][0];
           cell2.innerHTML = honor_val['one_person'][i][1];
+          cell3.innerHTML = " ";
+          cell4.innerHTML = " ";
+          cell5.innerHTML = " ";
+          cell6.innerHTML = " ";
+          blank.innerHTML = " ";
+          blank2.innerHTML = " ";
         }
         if (honor_val['one_person'].length != 0 || honor_val['two_people'].length != 0 || honor_val['three_people'].length != 0) {
           var row = perfect_table.insertRow(0);

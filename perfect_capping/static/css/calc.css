@@ -2,6 +2,11 @@
  * Styles for Perfect Capping
  */
 
+@font-face {
+  font-family: fun-times;
+  src: url(font-fam.ttf);
+}
+
 td {
 	padding-bottom: 2px;
 	padding-left: 10px;
@@ -18,12 +23,17 @@ table tr:nth-child(odd) {
 	background-color: #fff;
 }
 
+h1, h2 {
+	font-family: fun-times;
+}
+
 .add {
 	text-align: center;
 }
 
 .footer p {
 	margin-top: 70px;
+    padding-top: 20px;
 }
 
 .logo {
@@ -33,4 +43,20 @@ table tr:nth-child(odd) {
 
 .fun {
 	max-width: 65px;
+}
+
+.container {
+	text-align: center;
+}
+
+.container table {
+	margin: 0 auto;
+}
+
+h2 {
+	border-top: #999 1.2px solid;
+    margin-bottom: 20px;
+    margin-top: 20px; 
+    padding-bottom: 20px;
+    padding-top: 20px
 }
