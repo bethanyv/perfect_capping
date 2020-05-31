@@ -1,5 +1,8 @@
 # Project: Perfect Capping App for WoW ![alt text](https://github.com/bethanyv/perfect_capping/blob/master/perfect_capping/static/images/small_logo_3.png "Wow Logo")
 ## Author: Bethany Van Meter, bethanyv21@gmail.com
+This system is for finding what rank and level of players (up to 3) that, when killed, will equal the exact honor points the user enters.
+A table will display on the page with all possible options for one, two, and three player combinations to reach the desired honor point amount.
+
 This base code is taken from example projects for CIS 322 at UO by Professor Ramakrishnan Durairajan 
 
 ## To run:
