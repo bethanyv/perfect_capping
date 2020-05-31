@@ -56,8 +56,13 @@ def _calc_times():
 
     app.logger.debug("honor={}\n".format(honor))
     
-    needed_honor = perfect_cap_calc.calculate_honor(honor)
-    result = {"honor": needed_honor}
+    # dictionary of persons and opportunities
+    options = perfect_cap_calc.calculate_honor(honor)
+    one_person = options[1] # list of 1 person
+    two_people = options[2]
+    three_people = options[3]
+    result = {"one_person": one_person, "two_people": two_people, "three_people": three_people}
+    # result = options
     return flask.jsonify(result=result)
 
 @app.route('/new', methods=['POST'])

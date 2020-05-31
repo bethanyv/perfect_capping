@@ -21,10 +21,11 @@
   <script 
     src="{{ url_for('static', filename="js/moment.min.js") }}"></script>
 
+    <!-- Our own style sheet -->
+   <link rel="stylesheet" href="/static/css/calc.css" />
+
 </head>
 
-   <!-- Our own style sheet -->
-   <link rel="stylesheet" href="/static/css/calc.css" />
 
 <body>
 <!-- bootstrap requires a 'container' div around content -->
@@ -65,7 +66,12 @@
     <input type="submit" value="Submit">
 </form>
 
-<div id="options"></div>
+<h2>PERFECT:</h2>
+<table id="perfect_options"></table>
+<!-- <h2>TWO KILLS:</h2>
+<table id="two_people_options"></table>
+<h2>THREE KILLS:</h2>
+<table id="three_people_options"></table> -->
 
 <script type="text/javascript">
 
@@ -80,14 +86,36 @@
   function calc_times(honor) {
     // var honor = control.find("input[name='honor']").val();
     console.log(honor);
-    var options_field = document.getElementById('options');
+    var perfect_table = document.getElementById('perfect_options');
+    // var two_people_table = document.getElementById('two_people_options');
+    // var three_people_table = document.getElementById('three_people_options');
     
     $.getJSON(TIME_CALC_URL, { honor: honor }, 
       // response handler
       function(data) {
-         var honor_val = data.result;
-         console.log("Got a response: " +  honor_val.honor);
-         options_field.innerHTML = honor_val.honor;
+        perfect_table.innerHTML = '';
+        var honor_val = data.result;
+        console.log("Got a response: " +  honor_val['one_person']);
+        for (i = 0; i < honor_val['one_person'].length; i++) {
+          var row = perfect_table.insertRow(i);
+          var cell1 = row.insertCell(0);
+          var cell2 = row.insertCell(1);
+          cell1.innerHTML = honor_val['one_person'][i][0];
+          cell2.innerHTML = honor_val['one_person'][i][1];
+        }
+        if (honor_val['one_person'].length != 0) {
+          var row = perfect_table.insertRow(0);
+          var k = 0;
+          for(k = 0; k <= 4; k += 2) {
+            var cell1 = row.insertCell(k);
+            var cell2 = row.insertCell(k + 1);
+            cell1.innerHTML = "LEVEL";
+            cell2.innerHTML = "RANK";
+          }
+        }
+        else {
+          perfect_table.innerHTML = "No matches :("
+        }
        } // end of handler function
      );// End of getJSON
     }
