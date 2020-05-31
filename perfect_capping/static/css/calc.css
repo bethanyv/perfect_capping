@@ -7,13 +7,17 @@
  */
 
 td {
-  padding-right: 15px;
+	padding-right: 15px;
 }
 
 table tr:nth-child(even) {
-  background-color: #eee;
+	background-color: #eee;
 }
 
 table tr:nth-child(odd) {
-  background-color: #fff;
+	background-color: #fff;
+}
+
+.add {
+	text-align: center;
 }

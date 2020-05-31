@@ -32,7 +32,7 @@ def calculate_honor(honor_needed):
   '''
   TABLE = create_table('perfect_cap.csv')
   possibilities = {1: [], 2: [], 3: []}
-  # for 1 person
+  # for 1 kills
   for i in range(13): # 13 rows
     row = 0
     for point_amt in TABLE[i]:
@@ -43,7 +43,49 @@ def calculate_honor(honor_needed):
         possibilities[1].append(["Level " + str(LEVELS[i]),"Rank " + str(RANKS[row])])
       row += 1
 
+  print(TABLE)
+  # for 2 kills
+  for i in range(13): # 13 rows
+    row = 0
+    for point_amt in TABLE[i]:
+      point_amt = int(point_amt)
+      # print(point_amt)
+      for k in range(13): # 13 rows
+        row_to_add = 0
+        for point_amt_to_add in TABLE[k]:
+          point_amt_to_add = int(point_amt_to_add)
+          # print(point_amt)
+          if point_amt + point_amt_to_add == honor_needed:
+            if (["Level " + str(LEVELS[k]),"Rank " + str(RANKS[row_to_add]), "Level " + str(LEVELS[i]),"Rank " + str(RANKS[row])] not in possibilities[2]):
+              possibilities[2].append(["Level " + str(LEVELS[i]),"Rank " + str(RANKS[row]), "Level " + str(LEVELS[k]),"Rank " + str(RANKS[row_to_add])])
+          row_to_add += 1
+      row += 1
+  # for 3 kills
+  for i in range(13): # 13 rows
+    row = 0
+    for point_amt in TABLE[i]:
+      point_amt = int(point_amt)
+      # print(point_amt)
+      for k in range(13): # 13 rows
+        row_to_add = 0
+        for point_amt_to_add in TABLE[k]:
+          point_amt_to_add = int(point_amt_to_add)
+          # print(point_amt)
+          for j in range(13): # 13 rows
+            row_to_add_2 = 0
+            for point_amt_to_add_2 in TABLE[j]:
+              point_amt_to_add_2 = int(point_amt_to_add_2)
+              # print(point_amt)
+              if point_amt + point_amt_to_add + point_amt_to_add_2 == honor_needed:
+                if ((["Level " + str(LEVELS[k]),"Rank " + str(RANKS[row_to_add]), "Level " + str(LEVELS[i]),"Rank " + str(RANKS[row]), "Level " + str(LEVELS[j]),"Rank " + str(RANKS[row_to_add_2])] not in possibilities[3])\
+                  and (["Level " + str(LEVELS[j]),"Rank " + str(RANKS[row_to_add_2]), "Level " + str(LEVELS[k]),"Rank " + str(RANKS[row_to_add]), "Level " + str(LEVELS[i]),"Rank " + str(RANKS[row])] not in possibilities[3])\
+                  and (["Level " + str(LEVELS[j]),"Rank " + str(RANKS[row_to_add_2]), "Level " + str(LEVELS[i]),"Rank " + str(RANKS[row]), "Level " + str(LEVELS[k]),"Rank " + str(RANKS[row_to_add])] not in possibilities[3])):
+                    possibilities[3].append(["Level " + str(LEVELS[i]),"Rank " + str(RANKS[row]), "Level " + str(LEVELS[k]),"Rank " + str(RANKS[row_to_add]), "Level " + str(LEVELS[j]),"Rank " + str(RANKS[row_to_add_2])])
+              row_to_add_2 += 1
+          row_to_add += 1
+      row += 1
+
   return possibilities
 
 if __name__ == "__main__":
-  print(calculate_honor(51))
+  print(calculate_honor(100))

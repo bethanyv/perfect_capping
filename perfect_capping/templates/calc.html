@@ -1,6 +1,6 @@
 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
 <html> <head>
-<title>ACP Controle Times</title>
+<title>Perfect Cap Calculation</title>
 
   <!-- 'viewport' is used by bootstrap to respond to device size -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -32,25 +32,7 @@
 <div class="container">
 
 <h1>Perfect Cap Calculation</h1>
-  <p>Submit the honor points needed below to figure out which types of users to find</p>
-
-  <!--
-  -- If there are any warnings or other messages from a prior
-  -- request to the server, 
-  -- they appear above the rest of the content, just until the next 
-  -- action.  (This is only on request/response transactions that
-  -- result in regenerating the page, not on every xmlhttp request.) 
-  -->
-
-{% with messages = get_flashed_messages() %}
-  {% if messages %}
-    <ul class=flashes>
-    {% for message in messages %}
-      <li>{{ message }}</li>
-    {% endfor %}
-    </ul>
-  {% endif %}
-{% endwith %}
+  <p>Submit the honor points needed below to figure out which level and rank of a user to kill</p>
 
 <!-- Design on bootstrap grid -->
 
@@ -59,10 +41,10 @@
        appropriate for something that really is a table, like this
        one.  We allocate it the full 12 columns of the bootstrap grid.
   -->
-<form action="/new" method="POST">
+<form action="/new" method="POST" id="target">
      <!-- (honor) -->
     <label for="honor">Honor Points Needed:</label><br>
-    <input name="honor" type="text" min="0" max="1100" size="5" />
+    <input id="honor_input" name="honor" type="text" min="0" max="1100" size="5" />
     <input type="submit" value="Submit">
 </form>
 
@@ -96,6 +78,46 @@
         perfect_table.innerHTML = '';
         var honor_val = data.result;
         console.log("Got a response: " +  honor_val['one_person']);
+        console.log("Two kills response: " +  honor_val['two_people']);
+        console.log("Three kills response: " +  honor_val['three_people']);
+        // three kills
+        for (i = 0; i < honor_val['three_people'].length; i++) {
+          var row = perfect_table.insertRow(i);
+          var cell1 = row.insertCell(0);
+          var cell2 = row.insertCell(1);
+          var blank = row.insertCell(2);
+          var cell3 = row.insertCell(3);
+          var cell4 = row.insertCell(4);
+          var blank2 = row.insertCell(5);
+          var cell5 = row.insertCell(6);
+          var cell6 = row.insertCell(7);
+          cell1.innerHTML = honor_val['three_people'][i][0];
+          cell2.innerHTML = honor_val['three_people'][i][1];
+          blank.innerHTML = " + ";
+          blank.className = "add";
+          cell3.innerHTML = honor_val['three_people'][i][2];
+          cell4.innerHTML = honor_val['three_people'][i][3];
+          blank2.innerHTML = " + ";
+          blank2.className = "add";
+          cell5.innerHTML = honor_val['three_people'][i][4];
+          cell6.innerHTML = honor_val['three_people'][i][5];
+        }
+        // two kills
+        for (i = 0; i < honor_val['two_people'].length; i++) {
+          var row = perfect_table.insertRow(i);
+          var cell1 = row.insertCell(0);
+          var cell2 = row.insertCell(1);
+          var blank = row.insertCell(2);
+          var cell3 = row.insertCell(3);
+          var cell4 = row.insertCell(4);
+          cell1.innerHTML = honor_val['two_people'][i][0];
+          cell2.innerHTML = honor_val['two_people'][i][1];
+          blank.innerHTML = " + ";
+          blank.className = "add";
+          cell3.innerHTML = honor_val['two_people'][i][2];
+          cell4.innerHTML = honor_val['two_people'][i][3];
+        }
+        // one kill
         for (i = 0; i < honor_val['one_person'].length; i++) {
           var row = perfect_table.insertRow(i);
           var cell1 = row.insertCell(0);
@@ -103,14 +125,17 @@
           cell1.innerHTML = honor_val['one_person'][i][0];
           cell2.innerHTML = honor_val['one_person'][i][1];
         }
-        if (honor_val['one_person'].length != 0) {
+        if (honor_val['one_person'].length != 0 || honor_val['two_people'].length != 0 || honor_val['three_people'].length != 0) {
           var row = perfect_table.insertRow(0);
           var k = 0;
-          for(k = 0; k <= 4; k += 2) {
+          for(k = 0; k <= 6; k += 3) {
             var cell1 = row.insertCell(k);
             var cell2 = row.insertCell(k + 1);
+            var blank = row.insertCell(k + 2);
+            blank.className = "add";
             cell1.innerHTML = "LEVEL";
             cell2.innerHTML = "RANK";
+            blank.innerHTML = " "
           }
         }
         else {
@@ -123,9 +148,9 @@
   $(document).ready(function(){
    // Do the following when the page is finished loading
 
-      $('input[name="honor"]').change(
+      $("#target").submit(
          function() {
-             var honor = parseInt($(this).val());
+             var honor = parseInt(document.getElementById("honor_input").value);
              console.log("Honor: " + honor);
              calc_times(honor);
           });
