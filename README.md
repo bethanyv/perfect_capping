@@ -1,4 +1,4 @@
-# Project: Perfect Capping App for WoW ![alt text](https://github.com/bethanyv/perfect_capping/blob/master/perfect_capping/static/images/small_logo_2.png "Wow Logo")
+# Project: Perfect Capping App for WoW ![alt text](https://github.com/bethanyv/perfect_capping/blob/master/perfect_capping/static/images/small_logo.png "Wow Logo")
 ## Author: Bethany Van Meter, bethanyv21@gmail.com
 This base code is taken from example projects for CIS 322 at UO by Professor Ramakrishnan Durairajan 
 
