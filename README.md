@@ -9,8 +9,8 @@ Ensure credentials.ini is in the brevets folder.
 * `cd perfect_capping/`
 * `./run.sh`
 
-run.sh takes care of building the docker container and running it. The docker container will be running on whatever port number you decide in credentials.ini. In my case, I chose port 6021 in my credentials file, so I can go to:
+run.sh takes care of building the docker container and running it. The docker container will be running on whatever port number you decide in credentials.ini. In my case, I chose port 5000 in my credentials file, so I can go to:
 
-`localhost:6021`
+`localhost:5000`
 
 in my browser, I will see my running application (if running locally).
