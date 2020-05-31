@@ -9,13 +9,13 @@ This base code is taken from example projects for CIS 322 at UO by Professor Ram
 `git clone https://github.com/bethanyv/perfect_capping.git`
 
 ### 2. Pick one of the following:
-#### In file explorer:
+#### a. File explorer (easiest):
 
 * Go into perfect_capping folder
 * Double click on `run.sh`
-* Go to `localhost:5000/` in your browser
+* Go to `localhost:5000/` in your browser to view the program!
 
-#### Terminal/Command line:
+#### b. Terminal/Command line:
 
 Ensure credentials.ini is in the perfect_capping folder.
 
@@ -26,4 +26,4 @@ run.sh takes care of building the docker container and running it. The docker co
 
 `localhost:5000`
 
-in my browser, I will see my running application (if running locally).
+in my browser, I will see my running application.
