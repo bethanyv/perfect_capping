@@ -4,6 +4,19 @@ This base code is taken from example projects for CIS 322 at UO by Professor Ram
 
 ## To run:
 
+### 1. Clone this repository by going into the terminal/command line and typing:
+
+`git clone https://github.com/bethanyv/perfect_capping.git`
+
+### 2. Pick one of the following:
+#### In file explorer:
+
+* Go into perfect_capping folder
+* Double click on `run.sh`
+* Go to `localhost:5000/` in your browser
+
+#### Terminal/Command line:
+
 Ensure credentials.ini is in the perfect_capping folder.
 
 * `cd perfect_capping/`
