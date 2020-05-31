@@ -4,6 +4,9 @@ This base code is taken from example projects for CIS 322 at UO by Professor Ram
 
 ## To run:
 
+### If Docker is not installed, install Docker:
+[Click here to install Docker for your system](https://docs.docker.com/get-docker/ "Get Docker")
+
 ### 1. Clone this repository by going into the terminal/command line and typing:
 
 `git clone https://github.com/bethanyv/perfect_capping.git`
