@@ -25,7 +25,7 @@ Ensure credentials.ini is in the perfect_capping folder.
 * `cd perfect_capping/`
 * `./run.sh`
 
-run.sh takes care of building the docker container and running it. The docker container will be running on whatever port number you decide in credentials.ini. In my case, I chose port 5000 in my credentials file, so I can go to:
+run.sh takes care of building the docker container and running it. So I can go to:
 
 `localhost:5000`
 
